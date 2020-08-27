@@ -6,9 +6,9 @@ package ips;
  */
 public class MetodosOrdenamiento {
 
-    int turnos;
+    private int turnos;
 
-    private Paciente vectorDatos[];
+    private final Paciente vectorDatos[];
     private int numElementos;
 
     public MetodosOrdenamiento() {
@@ -18,7 +18,6 @@ public class MetodosOrdenamiento {
     }
 
     public void crearVector() {
-        //vectorDatos = new Paciente[numElementos];
         vectorDatos[0] = new Paciente(123, true);
         vectorDatos[1] = new Paciente(456, false);
         vectorDatos[2] = new Paciente(789, true);
@@ -32,6 +31,8 @@ public class MetodosOrdenamiento {
         vectorDatos[10] = new Paciente(643, true);
         vectorDatos[11] = new Paciente(175, true);
         vectorDatos[12] = new Paciente(864, true);
+        
+        numElementos = vectorDatos.length;
     }
 
     public void ponerTurnos() {
@@ -82,9 +83,8 @@ public class MetodosOrdenamiento {
 
     public void ordenarBurbuja() {
 
-        int i, j;
-        for (i = 0; i < getNumElementos(); i++) {
-            for (j = 0; j < (getNumElementos() - i) - 1; j++) {
+        for (int i = 0; i < getNumElementos(); i++) {
+            for (int j = 0; j < (getNumElementos() - i) - 1; j++) {
                 if (getVectorDatos(j).getTurno() > getVectorDatos(j + 1).getTurno()) {
                     cambiar(j, j + 1);
                 }
@@ -94,9 +94,8 @@ public class MetodosOrdenamiento {
 
     public void ordenarIntercambio() {
 
-        int i, j;
-        for (i = 0; i < getNumElementos(); i++) {
-            for (j = i + 1; j < getNumElementos(); j++) {
+        for (int i = 0; i < getNumElementos(); i++) {
+            for (int j = i + 1; j < getNumElementos(); j++) {
                 if (getVectorDatos(i).getTurno() > getVectorDatos(j).getTurno()) {
                     cambiar(i, j);
                 }
@@ -105,13 +104,12 @@ public class MetodosOrdenamiento {
     }
 
     public int posicionMenor(int inicio) {
-        int i;
         int posMenor;
         Paciente menorElemento;
         posMenor = inicio;
 
         menorElemento = getVectorDatos(inicio);
-        for (i = inicio + 1; i < getNumElementos(); i++) {
+        for (int i = inicio + 1; i < getNumElementos(); i++) {
 
             if (getVectorDatos(i).getTurno() < menorElemento.getTurno()) {
                 menorElemento = getVectorDatos(i);
@@ -128,9 +126,8 @@ public class MetodosOrdenamiento {
     }
 
     public void shell() {
-        int salto;
         boolean cambios;
-        for (salto = getNumElementos() / 2; salto != 0; salto /= 2) {
+        for (int salto = getNumElementos() / 2; salto != 0; salto /= 2) {
             cambios = true;
             while (cambios) {
                 cambios = false;
