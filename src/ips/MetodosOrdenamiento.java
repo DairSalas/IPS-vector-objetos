@@ -20,18 +20,18 @@ public class MetodosOrdenamiento {
     public void crearVector() {
         //vectorDatos = new Paciente[numElementos];
         vectorDatos[0] = new Paciente(123, true);
-        vectorDatos[1] = new Paciente();
-        vectorDatos[2] = new Paciente();
-        vectorDatos[3] = new Paciente();
-        vectorDatos[4] = new Paciente();
-        vectorDatos[5] = new Paciente();
-        vectorDatos[6] = new Paciente();
-        vectorDatos[7] = new Paciente();
-        vectorDatos[8] = new Paciente();
-        vectorDatos[9] = new Paciente();
-        vectorDatos[10] = new Paciente();
-        vectorDatos[11] = new Paciente();
-        vectorDatos[12] = new Paciente();
+        vectorDatos[1] = new Paciente(456, false);
+        vectorDatos[2] = new Paciente(789, true);
+        vectorDatos[3] = new Paciente(987, false);
+        vectorDatos[4] = new Paciente(654, true);
+        vectorDatos[5] = new Paciente(321, true);
+        vectorDatos[6] = new Paciente(012, true);
+        vectorDatos[7] = new Paciente(031, true);
+        vectorDatos[8] = new Paciente(045, false);
+        vectorDatos[9] = new Paciente(214, false);
+        vectorDatos[10] = new Paciente(643, true);
+        vectorDatos[11] = new Paciente(175, true);
+        vectorDatos[12] = new Paciente(864, true);
     }
 
     public void ponerTurnos() {
