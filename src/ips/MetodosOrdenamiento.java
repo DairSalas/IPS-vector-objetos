@@ -8,7 +8,7 @@ public class MetodosOrdenamiento {
 
     private int turnos;
 
-    private final Paciente vectorDatos[];
+    private Paciente vectorDatos[];
     private int numElementos;
 
     public MetodosOrdenamiento() {
@@ -18,6 +18,7 @@ public class MetodosOrdenamiento {
     }
 
     public void crearVector() {
+        vectorDatos = new Paciente[13];
         vectorDatos[0] = new Paciente(123, true);
         vectorDatos[1] = new Paciente(456, false);
         vectorDatos[2] = new Paciente(789, true);
@@ -45,6 +46,10 @@ public class MetodosOrdenamiento {
             }
         }
     }
+    
+    public int getTurnos() {
+        return turnos;
+    }
 
     public void setVectorDatos(int p, Paciente dato) {
         vectorDatos[p] = dato;
@@ -66,7 +71,7 @@ public class MetodosOrdenamiento {
         return numElementos;
     }
 
-    public void copiar(int v[]) {
+    public void copiar(Paciente v[]) {
         numElementos = v.length;
         crearVector();
         for (int i = 0; i < v.length; i++) {
